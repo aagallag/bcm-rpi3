@@ -9,6 +9,9 @@ brcmfmac/brcmfmac.ko: check-nexmon-setup-env
 	make -C ../../kernel/
 	make -C ../../kernel/ M=$$PWD/brcmfmac -j2
 
+brcmfmac/brcmfmac.ko_moduleonly: check-nexmon-setup-env
+	make -C ../../kernel/ M=$$PWD/brcmfmac -j2
+
 brcmfmac43430-sdio.bin: patcher.py patch.elf text.bin $(FUNCTIONS_BIN)
 	./patcher.py
 
