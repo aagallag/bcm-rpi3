@@ -8,7 +8,7 @@ if [ ! -d "$(pwd)/kernel" ]; then
 fi
 cd "$(pwd)/kernel"
 git rev-parse HEAD > ../kernel-at-commit
-patch -p1 --no-backup-if-mismatch < ../kernel_patches/channel_switching_monitor_mode.patch
+patch -R -p1 --no-backup-if-mismatch < ../kernel_patches/channel_switching_monitor_mode.patch
 cd ..
 
 if [ -d "$(pwd)/buildtools" ] && [ -d "$(pwd)/firmware_patching" ]; then
